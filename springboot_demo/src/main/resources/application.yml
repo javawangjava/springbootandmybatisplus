@@ -1,0 +1,65 @@
+#pom文件中,以Maven为主，SpringBoot为辅.因为最后打包的是maven。
+#多环境开发控制:Maven与SpringBoot多环境兼容（步骤），所以要保证兼容。
+
+
+#设置启用的环境
+#  SpringBoot中引用Maven属性
+#对于源码中非java类的操作要求加载Maven对应的属性，解析${}占位符
+spring:
+  profiles:
+    active: ${profile.active}
+
+
+#yaml文件多环境启动
+#yaml三个横杠分开不同环境
+---
+#开发
+spring:
+  config:
+    activate:
+      on-profile: dev
+server:
+  port: 80
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm_db?serverTimezone=UTC
+    username: root
+    password: 1234
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+
+---
+#生产
+spring:
+  config:
+    activate:
+      on-profile: pro
+server:
+  port: 81
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm_db?serverTimezone=UTC
+    username: root
+    password: 1234
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+---
+#测试
+spring:
+  config:
+    activate:
+      on-profile: test
+
+server:
+  port: 82
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm_db?serverTimezone=UTC
+    username: root
+    password: 1234
+    type: com.alibaba.druid.pool.DruidDataSource

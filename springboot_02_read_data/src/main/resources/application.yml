@@ -1,0 +1,16 @@
+server:
+  port: 80
+
+lesson: SpringBoot
+
+
+# 后面用下面这种格式用来配置信息，此种配置需要定义对应的类来包装所有的属性
+#  yaml数组数据：数组数据在数据书写位置的下方使用减号作为数据开始符号，每行书写一个数据，减号与数据间空格分隔。
+enterprise:
+  name: wang
+  age: 16
+  tel: 4006184000
+  subject:
+    - Java
+    - 前端
+    - 大数据
