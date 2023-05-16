@@ -16,7 +16,6 @@
         <module name="springboot_03_profile" />
         <module name="springboot_08_ssm" />
         <module name="springboot_06_junit_test" />
-        <module name="springbootNotes" />
         <module name="springboot_04_maven_and_boot_profile" />
         <module name="springboot_01_base_config" />
         <module name="springboot_02_read_data" />
@@ -25,6 +24,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="springboot_00_mybatisplus_notes" target="1.8" />
+      <module name="springbootNotes" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
